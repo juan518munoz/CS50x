@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <style>
+       a:link
+        {
+            color: #8A8A8A;
+        }
+
+       a:visited
+        {
+            color: #8A8A8A;
+        }
+
+       a:hover
+        {
+            color: black;
+        }
+    </style>
+
+    <a style="position: absolute; right: 6%; top: 4.25%; text-decoration:none;" href="/userdata">{{ username }}</a>
+    <table class="container">
+    <thead style="background-color:#6194FE; color: white;">
+        <tr>
+            <td>Symbol</td>
+            <td>Shares</td>
+            <td>Price</td>
+            <td>Total</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for share in shares %}
+        <tr>
+            <td>{{ share["stock"] }}</td>
+            <td id="amount">{{ share["amount"] }}</td>
+            <td id="price">${{ stock_value[share["stock"]] }}</td>
+            <td id="total">${{ stock_total[share["stock"]] }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td>CASH</td>
+            <td>-</td>
+            <td>-</td>
+            <td>${{ cash }}</td>
+        </tr>
+        <tr style="background-color:#C9DAFD;">
+            <td>TOTAL</td>
+            <td></td>
+            <td></td>
+            <td>${{ total }}</td>
+        </tr>
+    </tbody>
+    </table>
+{% endblock %}
+
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <link rel="icon" href="photos/cat.png">
+        <title>Gallery</title>
+    
+    </head>
+
+    <body>
+        <!-- Title -->
+        <a href="index.html" class="title">Mia</a> 
+
+        <h2 class="header">Gallery</h2>
+
+        <!-- Image -->
+        <div class="text-center gallery" style="margin-top: 20px;">
+            <img id="imgs" class="gallery" src="photos/gallery/img1.jpg" class="rounded" alt="MiaPic">
+        </div>
+
+        <!-- Next Image -->
+        <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+            <div style="margin-left: 45%;" class="btn-group mr-2" role="group" aria-label="First group">
+              <button id="img1" type="button" class="btn btn-secondary">1</button>
+              <button id="img2" type="button" class="btn btn-secondary">2</button>
+              <button id="img3" type="button" class="btn btn-secondary">3</button>
+
+            </div>
+
+            <!-- Change Image -->
+            <script>
+                let imgs = document.getElementById("imgs")
+
+                document.querySelector("#img1").onclick = function()
+                {
+                    imgs.src ="photos/gallery/img1.jpg"
+                }
+
+                document.querySelector("#img2").onclick = function()
+                {
+                    imgs.src ="photos/gallery/img2.jpg"
+                }
+
+                document.querySelector("#img3").onclick = function()
+                {
+                    imgs.src ="photos/gallery/img3.jpg"
+                }
+
+            </script>
+               
+        <!-- Bottom -->
+        <div class="bottom">
+            designed and developed by Juan Muñoz (2020)
+        </div>
+    </body>
+    
+</html>

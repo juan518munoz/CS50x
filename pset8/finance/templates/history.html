@@ -1,0 +1,51 @@
+{% extends "layout.html"%}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <script>
+    function color()
+    {
+        var color = document.querySelector('#amount');
+        if (color < 0)
+        {
+            document.querySelector('#row').style.backgroundColor = "Red";
+        }
+        else
+        {
+            document.querySelector('#row').style.backgroundColor = "Green";
+        }
+    }
+    </script>
+
+    <table class="container">
+    <thead style="background-color:#6194FE; color: white;">
+        <tr>
+            <td>Symbol</td>
+            <td>Shares</td>
+            <td>Cost of transaction</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in history %}
+            {% if row["amount"] < 0 %}
+            <tr id='row' style="background-color:#FF8390;">
+                <td>{{ row["stock"] }}</td>
+                <td id="amount">{{ row["amount"] }}</td>
+                <td id="price">${{ row["total"] }}</td>
+            </tr>
+            {% else %}
+            <tr id='row' style="background-color:#9AFF83">
+                <td>{{ row["stock"] }}</td>
+                <td id="amount">{{ row["amount"] }}</td>
+                <td id="price">${{ row["total"] }}</td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+    </tbody>
+    </table>
+
+{% endblock %}
+

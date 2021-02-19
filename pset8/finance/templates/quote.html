@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <form action="/quote" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="stock" id="stock" placeholder="Stock" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit" id="submit" disabled>search</button>
+    </form>
+
+    <script>
+        //* Input value must be beetwen 1 to 5 characters *//
+        document.querySelector('#stock').onkeyup = function()
+        {
+            var str = document.querySelector('#stock').value;
+            var strl = str.length;
+            if (1 <= strl && strl <= 5)
+            {
+                document.querySelector('#submit').disabled = false;
+            }
+            else
+            {
+                document.querySelector('#submit').disabled = true;
+            }
+        }
+    </script>
+{% endblock %}

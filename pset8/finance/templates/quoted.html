@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <table class="container">
+        <thead style="background-color:#6194FE; color: white;">
+            <tr>
+                <th scope="col">Stock</th>
+                <th scope="col">Company</th>
+                <th scope="col">Value</th>
+            </tr>
+        </thead>
+        <tbody class="thead-light">
+            <tr>
+                <td>{{ stock }}</td>
+                <td>{{ company }}</td>
+                <td>${{ value }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <form method="get" action="/buy">
+        <button style="margin-top: 10%;" class="btn btn-primary" type="submit">Buy stocks</button>
+    </form>
+{% endblock %}
